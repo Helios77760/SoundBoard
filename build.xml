@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright (c) Dylan Brasseur 2018. All Rights Reserved
+  ~ This file is part of a project released under the MIT License.
+  ~ See file LICENSE.md or go to https://opensource.org/licenses/MIT for full license details.
+  -->
+
+<project name="JavaSoundBoard" default="init" basedir=".">
+    <description>
+        simple example increment build variable
+    </description>
+    <!-- set global properties for this build -->
+    <property name="src" location="../src"/>
+
+    <target name="init">
+        <buildnumber/>
+        <replaceregexp file="src/control/Main.java"
+                       match="public\s+static\s+final\s+String\s+BUILD_NUMBER\s+=\s+&quot;.*&quot;;"
+                       replace="public static final String BUILD_NUMBER = &quot;${build.number}&quot;;"
+                       byline="true"
+        />
+
+    </target>
+</project>
