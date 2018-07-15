@@ -10,4 +10,9 @@ import javafx.scene.layout.GridPane;
 
 public class BaseLayout extends GridPane {
 
+    public BaseLayout()
+    {
+        super();
+    }
+
 }
